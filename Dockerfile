@@ -27,7 +27,8 @@ RUN mkdir /tmp/python \
   && export PYTHON_FOLDER=$(find /tmp/python -type d -name Python-*) \
   && cd $PYTHON_FOLDER \
   && ./configure --with-pydebug \
-  && make -s -j2
+  && make -s -j2 \ 
+  && rm -r $PYTHON_FOLDER
 
 # install aws-cli
 RUN pip3 install awscli --upgrade --user
