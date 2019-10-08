@@ -41,3 +41,5 @@ RUN mkdir /tmp/python \
 RUN pip3 install awscli --upgrade --user
 
 CMD ["/bin/bash"]
+
+ENTRYPOINT [ "bash -c ${ENTRY_COMMAND}" ]
