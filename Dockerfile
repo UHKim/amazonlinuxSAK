@@ -40,6 +40,6 @@ RUN mkdir /tmp/python \
 # install aws-cli
 RUN pip3 install awscli --upgrade --user
 
-CMD ["/bin/bash"]
+COPY scripts/* /runtime/scripts/
 
-ENTRYPOINT [ "bash -c ${ENTRY_COMMAND}" ]
+CMD ["/bin/bash"]
